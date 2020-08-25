@@ -10,10 +10,10 @@ router.use("/register", registerRouter);
 router.use("/login", loginRouter);
 
 //middleware
-//? should not be accessed without login and auth
+const authMiddleWare = require("../auth/authenticate-middleware");
 
-// router.use("/users", usersRouter);
-// router.use("/comments", commentsRouter);
+router.use("/users", authMiddleWare, usersRouter);
+router.use("/comments", authMiddleWare, commentsRouter);
 
 router.get("/", (req, res) => {
   res.send("<h1>Api is running, will you keep up?</h1>");
