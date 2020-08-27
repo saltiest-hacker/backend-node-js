@@ -21,7 +21,7 @@ function findById(id) {
 }
 
 function addUser(user) {
-  return db("users").returning("id").insert(user);
+  return db("users").insert(user);
 }
 
 function removeUser(id) {

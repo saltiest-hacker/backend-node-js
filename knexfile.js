@@ -1,5 +1,3 @@
-// Update with your config settings.
-
 module.exports = {
   development: {
     client: "sqlite3",
@@ -13,7 +11,4 @@ module.exports = {
     },
     seeds: { directory: "./data/seeds" },
   },
-
-  //! add testing and production
-  //* video in slack web_32
 };
