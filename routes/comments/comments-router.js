@@ -53,6 +53,20 @@ router.get("/:id", (req, res) => {
     });
 });
 
+router.put("/:id", (req, res) => {
+  const changes = req.body;
+
+  Comments.update(req.params.id, changes)
+    .then((update) => {
+      res.json({ message: `comment has been updated` });
+    })
+    .catch((error) => {
+      res
+        .status(404)
+        .json({ message: `cannot update comment`, error: error.message });
+    });
+});
+
 router.delete("/:id", (req, res) => {
   Comments.remove(req.params.id)
     .then((removed) => {

@@ -5,6 +5,7 @@ module.exports = {
   get,
   getAll,
   remove,
+  update,
 };
 
 function add(comment) {
@@ -21,4 +22,7 @@ function getAll(id) {
 
 function remove(id) {
   return db("comments").where({ id }).del();
+}
+function update(id, changes) {
+  return db("comments").where({ id }).update(changes, id);
 }
