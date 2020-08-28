@@ -27,7 +27,8 @@ password: //string, required
 - `GET /api/comments` - returns all the comments, **requires user's token**
 - `GET /api/comments/:id` - returns specific comment by its id, **requires user's token**
 - `POST /api/comments` - create new comment, **requires user's token**, returns comment id
-- `DELETE /api/comments:id` - delete specific comment, requires user's token
+- `DELETE /api/comments:id` - delete specific comment, **requires user's token**
+- `UPDATE /api/comments:id` - update specific comment, **requires user's token**
 
 body needs:
 
